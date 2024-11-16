@@ -4,7 +4,7 @@ import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewbinding.ViewBinding
+import com.example.deviarktesttask.dal.SpellsActivity
 import com.example.deviarktesttask.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +18,16 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnGetHouses.setOnClickListener{
             val intent = Intent(this, HousesActivity::class.java)
+            val options = ActivityOptions.makeCustomAnimation(
+                this,
+                R.anim.slide_in_right,
+                R.anim.slide_out_left
+            )
+            startActivity(intent, options.toBundle())
+        }
+
+        binding.btnGetSpells.setOnClickListener{
+            val intent = Intent(this, SpellsActivity::class.java)
             val options = ActivityOptions.makeCustomAnimation(
                 this,
                 R.anim.slide_in_right,
