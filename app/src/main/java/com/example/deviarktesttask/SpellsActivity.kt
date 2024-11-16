@@ -1,9 +1,8 @@
-package com.example.deviarktesttask.dal
+package com.example.deviarktesttask
 
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.deviarktesttask.R
 import com.example.deviarktesttask.databinding.ActivitySpellsBinding
 import okhttp3.Call
 import okhttp3.Callback

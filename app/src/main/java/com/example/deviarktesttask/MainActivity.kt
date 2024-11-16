@@ -4,7 +4,6 @@ import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.deviarktesttask.dal.SpellsActivity
 import com.example.deviarktesttask.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
