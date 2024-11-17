@@ -16,6 +16,9 @@
         android:theme="@style/Theme.DeviarkTestTask"
         tools:targetApi="31">
         <activity
+            android:name=".CharactersActivity"
+            android:exported="false" />
+        <activity
             android:name=".SpellsActivity"
             android:exported="false" />
         <activity

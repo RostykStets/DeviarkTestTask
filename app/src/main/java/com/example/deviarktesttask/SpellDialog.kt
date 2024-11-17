@@ -1,13 +1,11 @@
 package com.example.deviarktesttask
 
-import android.app.Activity
 import android.app.Dialog
 import android.content.Context
-import android.view.ViewGroup
 import android.widget.TextView
 import com.example.deviarktesttask.dal.Spell
 
-class SpellDialog//dialog.window.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+class SpellDialog
     (context: Context, spell: Spell) {
         private var dialog: Dialog = Dialog(context)
     init {
