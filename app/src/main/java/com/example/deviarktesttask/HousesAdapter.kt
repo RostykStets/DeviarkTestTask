@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 class HousesAdapter(private val houses: List<Pair<Int, String>>) :
     RecyclerView.Adapter<HousesAdapter.ViewHolder>() {
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val houseImage = itemView.findViewById<ImageView>(R.id.houseImage)
-        val houseTitle = itemView.findViewById<TextView>(R.id.houseTitle)
+        val houseImage: ImageView = itemView.findViewById(R.id.houseImage)
+        val houseTitle: TextView = itemView.findViewById(R.id.houseTitle)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
