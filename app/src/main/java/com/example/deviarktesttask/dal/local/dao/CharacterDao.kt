@@ -8,14 +8,14 @@ import com.example.deviarktesttask.dal.local.models.CharacterLocal
 @Dao
 interface CharacterDao {
     @Query("SELECT * FROM CharacterLocal")
-    fun getCharacters(): List<CharacterLocal>
+    suspend fun getCharacters(): List<CharacterLocal>
 
     @Insert
-    fun insertCharacter(characterLocal: CharacterLocal)
+    suspend fun insertCharacter(characterLocal: CharacterLocal)
 
     @Query("SELECT * FROM CharacterLocal WHERE id = :id")
-    fun getCharacterById(id: String): CharacterLocal?
+    suspend fun getCharacterById(id: String): CharacterLocal?
 
     @Query("SELECT * FROM CharacterLocal WHERE name = :name")
-    fun getCharacterByName(name: String): CharacterLocal?
+    suspend fun getCharacterByName(name: String): CharacterLocal?
 }

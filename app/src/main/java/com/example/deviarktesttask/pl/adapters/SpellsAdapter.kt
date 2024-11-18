@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.deviarktesttask.R
 import com.example.deviarktesttask.SpellDialog
-import com.example.deviarktesttask.SpellsActivity
 import com.example.deviarktesttask.dal.Spell
 
 class SpellsAdapter(private val context: Context, private val spells: List<Spell>):

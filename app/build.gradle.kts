@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-parcelize")
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -59,13 +59,12 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.glide)
 
-    val room_version = "2.6.1"
-
     implementation(libs.androidx.room.runtime)
 
     // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)
     // See Add the KSP plugin to your project
-    kapt("androidx.room:room-compiler:2.5.2")
+    //kapt(libs.androidx.room.compiler.v252)
+    ksp(libs.androidx.room.compiler)
 
     // If this project only uses Java source, use the Java annotationProcessor
     // No additional plugins are necessary
@@ -73,4 +72,9 @@ dependencies {
 
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation(libs.androidx.room.ktx)
+
+    implementation(libs.androidx.lifecycle.extensions)
+
+    implementation(libs.androidx.room.runtime.v250)
+    implementation(libs.androidx.room.ktx.v250)
 }

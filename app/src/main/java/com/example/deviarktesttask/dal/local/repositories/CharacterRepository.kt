@@ -5,19 +5,19 @@ import com.example.deviarktesttask.dal.local.models.CharacterLocal
 
 class CharacterRepository(private val characterDao: CharacterDao) {
 
-    fun getCharacters(): List<CharacterLocal> {
+    suspend fun getCharacters(): List<CharacterLocal> {
         return characterDao.getCharacters()
     }
 
-    fun insertCharacter(characterLocal: CharacterLocal) {
+    suspend fun insertCharacter(characterLocal: CharacterLocal) {
         characterDao.insertCharacter(characterLocal)
     }
 
-    fun getCharacterById(id: String): CharacterLocal? {
+    suspend fun getCharacterById(id: String): CharacterLocal? {
         return characterDao.getCharacterById(id)
     }
 
-    fun getCharacterByName(name: String): CharacterLocal? {
+    suspend fun getCharacterByName(name: String): CharacterLocal? {
         return characterDao.getCharacterByName(name)
     }
 }
