@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.deviarktesttask.CharacterDialog
+import com.example.deviarktesttask.pl.dialogs.CharacterDialog
 import com.example.deviarktesttask.R
 import com.example.deviarktesttask.dal.Character
 import java.net.URL

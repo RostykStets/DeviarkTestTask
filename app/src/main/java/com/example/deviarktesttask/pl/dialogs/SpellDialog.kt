@@ -1,8 +1,9 @@
-package com.example.deviarktesttask
+package com.example.deviarktesttask.pl.dialogs
 
 import android.app.Dialog
 import android.content.Context
 import android.widget.TextView
+import com.example.deviarktesttask.R
 import com.example.deviarktesttask.dal.Spell
 
 class SpellDialog

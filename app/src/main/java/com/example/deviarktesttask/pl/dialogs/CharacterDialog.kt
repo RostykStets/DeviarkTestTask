@@ -1,4 +1,4 @@
-package com.example.deviarktesttask
+package com.example.deviarktesttask.pl.dialogs
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -11,6 +11,9 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.example.deviarktesttask.pl.activities.LearnedSpellsActivity
+import com.example.deviarktesttask.pl.activities.NewSpellsActivity
+import com.example.deviarktesttask.R
 import com.example.deviarktesttask.bll.local.implementations.CharactersSpellsService
 import com.example.deviarktesttask.dal.Character
 import com.example.deviarktesttask.dal.local.MyApp

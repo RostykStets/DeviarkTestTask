@@ -1,10 +1,11 @@
-package com.example.deviarktesttask
+package com.example.deviarktesttask.pl.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.deviarktesttask.R
 import com.example.deviarktesttask.bll.local.implementations.SpellService
 import com.example.deviarktesttask.bll.remote.SpellAPI
 import com.example.deviarktesttask.dal.local.MyApp

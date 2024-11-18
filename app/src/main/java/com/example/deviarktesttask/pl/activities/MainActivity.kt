@@ -1,10 +1,11 @@
-package com.example.deviarktesttask
+package com.example.deviarktesttask.pl.activities
 
 import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.example.deviarktesttask.R
 import com.example.deviarktesttask.bll.local.implementations.CharacterService
 import com.example.deviarktesttask.bll.remote.CharactersAPI
 import com.example.deviarktesttask.dal.local.MyApp

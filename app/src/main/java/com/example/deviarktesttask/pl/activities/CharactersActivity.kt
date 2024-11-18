@@ -1,10 +1,11 @@
-package com.example.deviarktesttask
+package com.example.deviarktesttask.pl.activities
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.example.deviarktesttask.R
 import com.example.deviarktesttask.dal.Character
 import com.example.deviarktesttask.databinding.ActivityCharactersBinding
 import com.example.deviarktesttask.pl.fragments.OtherWizardsFragment

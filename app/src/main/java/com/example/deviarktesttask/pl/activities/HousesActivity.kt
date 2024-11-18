@@ -1,10 +1,12 @@
-package com.example.deviarktesttask
+package com.example.deviarktesttask.pl.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.deviarktesttask.R
 import com.example.deviarktesttask.databinding.ActivityHousesBinding
+import com.example.deviarktesttask.pl.dialogs.HousesAdapter
 
 class HousesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHousesBinding

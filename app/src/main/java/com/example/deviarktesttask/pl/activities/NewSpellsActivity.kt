@@ -1,9 +1,10 @@
-package com.example.deviarktesttask
+package com.example.deviarktesttask.pl.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.deviarktesttask.R
 import com.example.deviarktesttask.dal.Spell
 import com.example.deviarktesttask.databinding.ActivityNewSpellsBinding
 import com.example.deviarktesttask.pl.adapters.NewSpellsAdapter

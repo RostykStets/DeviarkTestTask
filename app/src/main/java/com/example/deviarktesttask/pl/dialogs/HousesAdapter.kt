@@ -1,4 +1,4 @@
-package com.example.deviarktesttask
+package com.example.deviarktesttask.pl.dialogs
 
 import android.app.Activity
 import android.app.ActivityOptions
@@ -9,16 +9,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.deviarktesttask.pl.activities.CharactersActivity
+import com.example.deviarktesttask.R
 import com.example.deviarktesttask.bll.remote.CharactersAPI
-import com.example.deviarktesttask.dal.Character
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import okhttp3.Callback
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import java.io.IOException
 import java.util.ArrayList
 
 class HousesAdapter(private val houses: List<Pair<Int, String>>) :
