@@ -1,5 +1,6 @@
 package com.example.deviarktesttask.pl.dialogs
 
+import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.widget.TextView
@@ -11,6 +12,8 @@ import com.example.deviarktesttask.dal.CharactersSpells
 import com.example.deviarktesttask.dal.Spell
 import com.example.deviarktesttask.dal.local.MyApp
 import com.example.deviarktesttask.dal.local.repositories.CharactersSpellsRepository
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class NewSpellDialog
     (context: Context, spell: Spell, characterId: String) {
@@ -25,10 +28,16 @@ class NewSpellDialog
         description.text = spell.description
 
         btnLearnSpell.setOnClickListener{
-            val newRecord = CharactersSpells(characterId, spell.id)
-            CharactersSpellsService(CharactersSpellsRepository(MyApp.database.charactersSpellsDao())).upsert(newRecord)
-            Toast.makeText(context, "You learned new spell!", Toast.LENGTH_SHORT).show()
-            dialog.hide()
+            GlobalScope.launch {
+                val newRecord = CharactersSpells(characterId, spell.id)
+                CharactersSpellsService(CharactersSpellsRepository(MyApp.database.charactersSpellsDao())).upsert(
+                    newRecord
+                )
+                (context as? Activity)?.runOnUiThread {
+                    Toast.makeText(context, "You learned new spell!", Toast.LENGTH_SHORT).show()
+                    dialog.hide()
+                }
+            }
         }
     }
     fun show(){

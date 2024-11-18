@@ -6,9 +6,9 @@ import com.example.deviarktesttask.dal.local.models.SpellLocal
 
 interface ICharactersSpellsService {
 
-    fun upsert(charactersSpells: CharactersSpells)
+    suspend fun upsert(charactersSpells: CharactersSpells)
 
-    fun getSpellsByCharacter(characterId: String): List<Spell>
+    suspend fun getSpellsByCharacter(characterId: String): List<Spell>
 
-    fun getUnknownSpells(characterId:String): List<Spell>
+    suspend fun getUnknownSpells(characterId:String): List<Spell>
 }

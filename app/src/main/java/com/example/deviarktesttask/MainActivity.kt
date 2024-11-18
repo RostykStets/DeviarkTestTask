@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.example.deviarktesttask.bll.local.implementations.CharacterService
 import com.example.deviarktesttask.bll.remote.CharactersAPI
 import com.example.deviarktesttask.dal.local.MyApp
 import com.example.deviarktesttask.dal.local.models.SpellLocal
+import com.example.deviarktesttask.dal.local.repositories.CharacterRepository
 import com.example.deviarktesttask.dal.local.repositories.SpellRepository
 import com.example.deviarktesttask.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
@@ -25,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnGetAllCharacters.setOnClickListener{
             lifecycleScope.launch {
                 val characters = CharactersAPI().getAllCharacters()
+                for (character in characters){
+                    CharacterService(CharacterRepository(MyApp.database.characterDao())).upsertCharacter(character)
+                }
                 val intent = Intent(this@MainActivity, CharactersActivity::class.java)
                 intent.putExtra("Characters", ArrayList(characters))
                 val options = ActivityOptions.makeCustomAnimation(
