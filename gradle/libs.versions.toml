@@ -1,5 +1,7 @@
 [versions]
 agp = "8.5.0"
+fragmentVersion = "1.8.5"
+glide = "4.15.1"
 gson = "2.11.0"
 kotlin = "1.9.0"
 coreKtx = "1.10.1"
@@ -15,6 +17,8 @@ okhttp = "4.12.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentVersion" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
