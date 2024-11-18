@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 data class Character(
     val id: String,
     val name: String,
-    val alternateNames: List<String>?,
+    val alternate_names: List<String>?,
     val species: String,
     val gender: String,
     val house: String,
@@ -22,7 +22,7 @@ data class Character(
     val hogwartsStudent: Boolean,
     val hogwartsStaff: Boolean,
     val actor: String,
-    val alternateActors: List<String>?,
+    val alternate_actors: List<String>?,
     val alive: Boolean,
     val image: String
 ) : Parcelable

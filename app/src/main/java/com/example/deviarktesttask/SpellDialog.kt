@@ -7,7 +7,7 @@ import com.example.deviarktesttask.dal.Spell
 
 class SpellDialog
     (context: Context, spell: Spell) {
-        private var dialog: Dialog = Dialog(context)
+        private val dialog: Dialog = Dialog(context)
     init {
         dialog.setContentView(R.layout.spell_dialog)
         dialog.window?.setBackgroundDrawableResource(R.drawable.spell_dialog_bg)
