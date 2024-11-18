@@ -23,4 +23,14 @@ interface CharactersSpellsDao {
         WHERE cs.characterId = :characterId)
     """)
     suspend fun getUnknownSpells(characterId:String): List<SpellLocal>
+
+    @Query("""
+        SELECT s.*
+        FROM SpellLocal s
+        WHERE s.Id IN (
+        SELECT cs.spellId
+        FROM CharactersSpellsLocal cs
+        WHERE cs.characterId = :characterId)
+    """)
+    suspend fun getLearnedSpells(characterId: String): List<SpellLocal>
 }

@@ -17,4 +17,8 @@ class CharactersSpellsRepository(private val charactersSpellsDao: CharactersSpel
     suspend fun getUnknownSpells(characterId: String): List<SpellLocal> {
         return charactersSpellsDao.getUnknownSpells(characterId)
     }
+
+    suspend fun getLearnedSpells(characterId: String): List<SpellLocal> {
+        return charactersSpellsDao.getLearnedSpells(characterId)
+    }
 }

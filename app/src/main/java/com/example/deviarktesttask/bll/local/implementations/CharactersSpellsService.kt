@@ -29,4 +29,13 @@ class CharactersSpellsService(private val charactersSpellsRepository: Characters
         }
         return spells.toList()
     }
+
+    override suspend fun getLearnedSpells(characterId: String): List<Spell> {
+        val spellsLocal = charactersSpellsRepository.getLearnedSpells(characterId)
+        val spells: MutableList<Spell> = mutableListOf()
+        for(spellLocal in spellsLocal){
+            spells.add(Spell(spellLocal.id, spellLocal.name, spellLocal.description))
+        }
+        return spells.toList()
+    }
 }
