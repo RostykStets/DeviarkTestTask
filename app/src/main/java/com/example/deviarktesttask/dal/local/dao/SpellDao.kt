@@ -3,22 +3,22 @@ package com.example.deviarktesttask.dal.local.dao
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.deviarktesttask.dal.local.models.Spell
+import com.example.deviarktesttask.dal.local.models.SpellLocal
 
 @Dao
 interface SpellDao {
-    @Query("SELECT * FROM Spell")
-    fun getSpells(): List<Spell>
+    @Query("SELECT * FROM SpellLocal")
+    fun getSpells(): List<SpellLocal>
 
     @Insert
-    fun insertSpell(spell: Spell)
+    fun insertSpell(spellLocal: SpellLocal)
 
-    @Query("SELECT * FROM Spell WHERE id = :id")
-    fun getSpellById(id: String): Spell?
+    @Query("SELECT * FROM SpellLocal WHERE id = :id")
+    fun getSpellById(id: String): SpellLocal?
 
-    @Query("SELECT * FROM Spell WHERE name = :name")
-    fun getSpellByName(name: String): Spell?
+    @Query("SELECT * FROM SpellLocal WHERE name = :name")
+    fun getSpellByName(name: String): SpellLocal?
 
-    @Query("SELECT * FROM Spell WHERE description = :description")
-    fun getSpellByDescription(description: String): Spell?
+    @Query("SELECT * FROM SpellLocal WHERE description = :description")
+    fun getSpellByDescription(description: String): SpellLocal?
 }

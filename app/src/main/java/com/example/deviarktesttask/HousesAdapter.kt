@@ -84,6 +84,5 @@ class HousesAdapter(private val houses: List<Pair<Int, String>>) :
                 }
             }
         })
-
     }
 }

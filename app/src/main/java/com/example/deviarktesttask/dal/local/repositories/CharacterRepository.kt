@@ -1,23 +1,23 @@
 package com.example.deviarktesttask.dal.local.repositories
 
 import com.example.deviarktesttask.dal.local.dao.CharacterDao
-import com.example.deviarktesttask.dal.local.models.Character
+import com.example.deviarktesttask.dal.local.models.CharacterLocal
 
 class CharacterRepository(private val characterDao: CharacterDao) {
 
-    fun getCharacters(): List<Character> {
+    fun getCharacters(): List<CharacterLocal> {
         return characterDao.getCharacters()
     }
 
-    fun insertCharacter(character: Character) {
-        characterDao.insertCharacter(character)
+    fun insertCharacter(characterLocal: CharacterLocal) {
+        characterDao.insertCharacter(characterLocal)
     }
 
-    fun getCharacterById(id: String): Character? {
+    fun getCharacterById(id: String): CharacterLocal? {
         return characterDao.getCharacterById(id)
     }
 
-    fun getCharacterByName(name: String): Character? {
+    fun getCharacterByName(name: String): CharacterLocal? {
         return characterDao.getCharacterByName(name)
     }
 }
