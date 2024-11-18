@@ -5,12 +5,12 @@ import com.example.deviarktesttask.dal.local.models.SpellLocal
 
 class SpellRepository(private val spellDao: SpellDao) {
 
-    fun getSpells(): List<SpellLocal> {
+    suspend fun getSpells(): List<SpellLocal> {
         return spellDao.getSpells()
     }
 
-    fun insertSpell(spellLocal: SpellLocal){
-        spellDao.insertSpell(spellLocal)
+    fun upsertSpell(spellLocal: SpellLocal){
+        spellDao.upsertSpell(spellLocal)
     }
 
     fun getSpellById(id: String): SpellLocal? {

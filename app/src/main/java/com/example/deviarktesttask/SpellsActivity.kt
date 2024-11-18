@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.deviarktesttask.bll.local.implementations.SpellService
 import com.example.deviarktesttask.dal.Spell
+import com.example.deviarktesttask.dal.local.MyApp
+import com.example.deviarktesttask.dal.local.repositories.SpellRepository
 import com.example.deviarktesttask.databinding.ActivitySpellsBinding
 import com.example.deviarktesttask.pl.adapters.SpellsAdapter
 import com.google.gson.Gson
@@ -50,6 +53,11 @@ class SpellsActivity : AppCompatActivity() {
 
                         }catch (exception: Exception){
                             exception.stackTrace
+                        }
+
+                        val spellService = SpellService(SpellRepository(MyApp.database.spellDao()))
+                        for(spell in spells){
+                            spellService.upsertSpell(spell)
                         }
 
                         runOnUiThread {

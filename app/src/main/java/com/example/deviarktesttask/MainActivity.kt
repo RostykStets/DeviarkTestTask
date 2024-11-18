@@ -7,10 +7,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.deviarktesttask.bll.remote.CharactersAPI
-import com.example.deviarktesttask.dal.local.AppDatabase
 import com.example.deviarktesttask.dal.local.MyApp
-import com.example.deviarktesttask.dal.local.models.CharacterLocal
-import com.example.deviarktesttask.dal.local.repositories.CharacterRepository
+import com.example.deviarktesttask.dal.local.models.SpellLocal
+import com.example.deviarktesttask.dal.local.repositories.SpellRepository
 import com.example.deviarktesttask.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
 
@@ -60,11 +59,11 @@ class MainActivity : AppCompatActivity() {
         binding.btnGetLocalCharacters.setOnClickListener{
 
             lifecycleScope.launch {
-                val localCharacters: List<CharacterLocal> =
-                    CharacterRepository(MyApp.database.characterDao()).getCharacters()
+                val localSpells: List<SpellLocal> =
+                    SpellRepository(MyApp.database.spellDao()).getSpells()
                 Toast.makeText(
                     this@MainActivity,
-                    "Local characters amount: ${localCharacters.size}",
+                    "Local spells amount: ${localSpells.size}",
                     Toast.LENGTH_SHORT
                 ).show()
             }

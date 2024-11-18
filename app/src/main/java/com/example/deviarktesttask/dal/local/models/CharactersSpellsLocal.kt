@@ -18,7 +18,7 @@ ForeignKey(
     onUpdate = ForeignKey.CASCADE,
     onDelete = ForeignKey.CASCADE
 )])
-data class CharactersSpells(
+data class CharactersSpellsLocal(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val characterId: String,

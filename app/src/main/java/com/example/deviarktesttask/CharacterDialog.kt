@@ -1,14 +1,24 @@
 package com.example.deviarktesttask
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.app.ActivityOptions
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.example.deviarktesttask.bll.local.implementations.CharactersSpellsService
 import com.example.deviarktesttask.dal.Character
+import com.example.deviarktesttask.dal.local.MyApp
+import com.example.deviarktesttask.dal.local.repositories.CharactersSpellsRepository
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.net.URL
+import java.util.ArrayList
 
 @SuppressLint("SetTextI18n")
 class CharacterDialog(context: Context, character: Character) {
@@ -35,6 +45,7 @@ class CharacterDialog(context: Context, character: Character) {
         val actor: TextView = dialog.findViewById(R.id.actor)
         val alternateActors: TextView = dialog.findViewById(R.id.alternate_actors)
         val alive: TextView = dialog.findViewById(R.id.alive)
+        val btnGoTeachSpell: Button = dialog.findViewById(R.id.btn_go_teach_spell)
 
         if(character.image != "") {
             val imageUrl = URL(character.image)
@@ -91,6 +102,29 @@ class CharacterDialog(context: Context, character: Character) {
             alternateActors.visibility = View.GONE
         }
         alive.text = if(character.alive) "Alive" else "Dead"
+
+        btnGoTeachSpell.setOnClickListener{
+            GlobalScope.launch {
+                val unknownSpells =
+                    CharactersSpellsService(CharactersSpellsRepository(MyApp.database.charactersSpellsDao())).getUnknownSpells(
+                        character.id
+                    )
+
+                (context as? Activity)?.runOnUiThread {
+                    // Code to run on the main thread after the suspend function completes
+                    val intent = Intent(context, NewSpellsActivity::class.java)
+                    intent.putExtra("CHARACTER_ID", character.id)
+                    intent.putExtra("NEW_SPELLS", ArrayList(unknownSpells))
+                    val options = ActivityOptions.makeCustomAnimation(
+                        context,
+                        R.anim.slide_in_right,
+                        R.anim.slide_out_left
+                    )
+                    context.startActivity(intent, options.toBundle())
+                    dialog.dismiss()
+                }
+            }
+        }
     }
     fun show(){
         dialog.show()
