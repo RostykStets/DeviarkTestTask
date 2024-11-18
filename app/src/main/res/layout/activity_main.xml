@@ -1,49 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:gravity="center"
+android:background="@drawable/bg_parchment"
+tools:context=".pl.activities.MainActivity">
+
+<Button
+    android:id="@+id/btn_get_all_characters"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/item_background"
     android:gravity="center"
-    tools:context=".pl.activities.MainActivity">
+    android:text="Get all Characters"
+    android:textSize="18sp"
+    android:textColor="@color/magic_black"
+    android:textStyle="bold"
+    tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/btn_get_all_characters"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:text="Get all characters"
-        android:textSize="18sp"
-        tools:ignore="HardcodedText" />
+<Button
+    android:id="@+id/btn_get_spells"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/item_background"
+    android:text="Get Spells"
+    android:textSize="18sp"
+    android:textColor="@color/magic_black"
+    android:textStyle="bold"
+    tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/btn_get_spells"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:text="Get all spells"
-        android:textSize="18sp"
-        tools:ignore="HardcodedText"/>
-
-    <Button
-        android:id="@+id/btn_get_houses"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:text="Get houses"
-        android:textSize="18sp"
-        tools:ignore="HardcodedText"/>
-
-    <Button
-        android:id="@+id/btn_get_local_characters"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:text="Get local characters"
-        android:textSize="18sp"
-        tools:ignore="HardcodedText"/>
+<Button
+    android:id="@+id/btn_get_houses"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/item_background"
+    android:text="Get Houses"
+    android:textSize="18sp"
+    android:textColor="@color/black"
+    android:textStyle="bold"
+    tools:ignore="HardcodedText" />
 
 </LinearLayout>

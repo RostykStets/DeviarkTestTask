@@ -24,12 +24,6 @@ class CharactersActivity : AppCompatActivity() {
         setContentView(view)
         val characters: List<Character> = intent.getParcelableArrayListExtra("Characters") ?: emptyList()
         runOnUiThread{
-            if (characters.isEmpty()){
-                binding.characters.text = "Fail"
-            }else{
-                binding.characters.text = "Characters: " + characters.size
-            }
-
             var charactersToPass:List<Character>
             charactersToPass = characters.filter { character: Character ->  character.hogwartsStudent}
             val bundle = Bundle()
