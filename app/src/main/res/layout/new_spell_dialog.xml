@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="230dp"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/dialog_frame">
+
+    <TextView
+        android:id="@+id/spell_name_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/magic_blue" />
+
+    <TextView
+        android:id="@+id/spell_description_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:gravity="center"
+        android:textColor="@color/magic_black"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btn_learn_spell"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Learn"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/magic_black"
+        android:background="@drawable/button_magic"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>
