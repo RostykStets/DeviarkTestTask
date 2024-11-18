@@ -2,22 +2,16 @@ package com.example.deviarktesttask
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.deviarktesttask.bll.local.implementations.SpellService
-import com.example.deviarktesttask.dal.Spell
+import com.example.deviarktesttask.bll.remote.SpellAPI
 import com.example.deviarktesttask.dal.local.MyApp
 import com.example.deviarktesttask.dal.local.repositories.SpellRepository
 import com.example.deviarktesttask.databinding.ActivitySpellsBinding
 import com.example.deviarktesttask.pl.adapters.SpellsAdapter
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
-import java.io.IOException
+import kotlinx.coroutines.launch
 
 
 class SpellsActivity : AppCompatActivity() {
@@ -28,51 +22,23 @@ class SpellsActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val url = "https://hp-api.onrender.com/api/spells"
+        lifecycleScope.launch {
 
-        val client = OkHttpClient()
-        val request = Request.Builder().url(url).build()
+            val spells = SpellAPI().getAllSpells()
 
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                e.stackTrace
+            val spellService = SpellService(SpellRepository(MyApp.database.spellDao()))
+            for(spell in spells){
+                spellService.upsertSpell(spell)
             }
-
-            override fun onResponse(call: Call, response: Response) {
-                response.use {
-                    if (!response.isSuccessful) {
-                        TODO()
-                    }
-                    else{
-                        val body = response.body?.string()
-                        var spells = listOf<Spell>()
-                        try {
-                            val gson = Gson()
-                            val typeToken = object : TypeToken<List<Spell>>() {}.type
-                            spells = gson.fromJson<List<Spell>>(body, typeToken)
-
-                        }catch (exception: Exception){
-                            exception.stackTrace
-                        }
-
-                        val spellService = SpellService(SpellRepository(MyApp.database.spellDao()))
-                        for(spell in spells){
-                            spellService.upsertSpell(spell)
-                        }
-
-                        runOnUiThread {
-                            val adapter = SpellsAdapter(this@SpellsActivity, spells)
-                            val spellsRecyclerView =
-                                findViewById<RecyclerView>(R.id.spells_recyclerview)
-                            spellsRecyclerView.layoutManager =
-                                LinearLayoutManager(this@SpellsActivity )
-                            spellsRecyclerView.adapter = adapter
-                        }
-                    }
-                }
+            runOnUiThread {
+                val adapter = SpellsAdapter(this@SpellsActivity, spells)
+                val spellsRecyclerView =
+                    findViewById<RecyclerView>(R.id.spells_recyclerview)
+                spellsRecyclerView.layoutManager =
+                    LinearLayoutManager(this@SpellsActivity )
+                spellsRecyclerView.adapter = adapter
             }
-        })
-
+        }
     }
 
     override fun finish() {

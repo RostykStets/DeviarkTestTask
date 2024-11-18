@@ -148,7 +148,8 @@
                 android:text="Learned spells"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText" />
 
             <Button
                 android:id="@+id/btn_go_teach_spell"
@@ -157,151 +158,9 @@
                 android:text="Learn new spell"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText" />
 
         </LinearLayout>
     </ScrollView>
-<!--    <ImageView-->
-<!--        android:id="@+id/image"-->
-<!--        android:layout_width="170dp"-->
-<!--        android:layout_height="170dp"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        tools:ignore="ContentDescription" />-->
-<!--    <TextView-->
-<!--        android:id="@+id/name"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="18sp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/alternate_names"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        android:gravity="center"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/species"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/gender"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/house"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/date_of_birth"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/year_of_birth"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/wizard"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/ancestry"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/eye_colour"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/hair_colour"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/patronus"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/hogwartsStudent"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/hogwartsStaff"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/actor"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/alternate_actors"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        android:gravity="center"/>-->
-<!--    <TextView-->
-<!--        android:id="@+id/alive"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="16sp"-->
-<!--        android:textStyle="normal"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_learned_spells"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:text="Learned spells"-->
-<!--        android:textSize="18sp"-->
-<!--        android:gravity="center"-->
-<!--        android:layout_marginBottom="10dp"/>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_go_teach_spell"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:text="Learn new spell"-->
-<!--        android:textSize="18sp"-->
-<!--        android:gravity="center"-->
-<!--        android:layout_marginBottom="10dp"/>-->
 </LinearLayout>

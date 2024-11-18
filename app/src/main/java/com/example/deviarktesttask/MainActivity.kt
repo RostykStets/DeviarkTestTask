@@ -3,15 +3,12 @@ package com.example.deviarktesttask
 import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.deviarktesttask.bll.local.implementations.CharacterService
 import com.example.deviarktesttask.bll.remote.CharactersAPI
 import com.example.deviarktesttask.dal.local.MyApp
-import com.example.deviarktesttask.dal.local.models.SpellLocal
 import com.example.deviarktesttask.dal.local.repositories.CharacterRepository
-import com.example.deviarktesttask.dal.local.repositories.SpellRepository
 import com.example.deviarktesttask.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
 
@@ -59,19 +56,6 @@ class MainActivity : AppCompatActivity() {
                 R.anim.slide_out_left
             )
             startActivity(intent, options.toBundle())
-        }
-
-        binding.btnGetLocalCharacters.setOnClickListener{
-
-            lifecycleScope.launch {
-                val localSpells: List<SpellLocal> =
-                    SpellRepository(MyApp.database.spellDao()).getSpells()
-                Toast.makeText(
-                    this@MainActivity,
-                    "Local spells amount: ${localSpells.size}",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
         }
     }
 }

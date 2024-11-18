@@ -8,6 +8,6 @@ import com.example.deviarktesttask.dal.local.repositories.CharacterRepository
 class CharacterService(private val characterRepository: CharacterRepository): ICharacterService {
 
     override suspend fun upsertCharacter(character: Character) {
-        characterRepository.insertCharacter(CharacterLocal(character.id, character.name))
+        characterRepository.upsertCharacter(CharacterLocal(character.id, character.name))
     }
 }

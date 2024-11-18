@@ -46,6 +46,7 @@ class CharacterDialog(context: Context, character: Character) {
         val alternateActors: TextView = dialog.findViewById(R.id.alternate_actors)
         val alive: TextView = dialog.findViewById(R.id.alive)
         val btnGoTeachSpell: Button = dialog.findViewById(R.id.btn_go_teach_spell)
+        val btnLearnedSpells: Button = dialog.findViewById(R.id.btn_learned_spells)
 
         if(character.image != "") {
             val imageUrl = URL(character.image)
@@ -111,10 +112,29 @@ class CharacterDialog(context: Context, character: Character) {
                     )
 
                 (context as? Activity)?.runOnUiThread {
-                    // Code to run on the main thread after the suspend function completes
                     val intent = Intent(context, NewSpellsActivity::class.java)
                     intent.putExtra("CHARACTER_ID", character.id)
                     intent.putExtra("NEW_SPELLS", ArrayList(unknownSpells))
+                    val options = ActivityOptions.makeCustomAnimation(
+                        context,
+                        R.anim.slide_in_right,
+                        R.anim.slide_out_left
+                    )
+                    context.startActivity(intent, options.toBundle())
+                    dialog.hide()
+                }
+            }
+        }
+        btnLearnedSpells.setOnClickListener{
+            GlobalScope.launch {
+                val learnedSpells =
+                    CharactersSpellsService(CharactersSpellsRepository(MyApp.database.charactersSpellsDao())).getLearnedSpells(
+                        character.id
+                    )
+
+                (context as? Activity)?.runOnUiThread {
+                    val intent = Intent(context, LearnedSpellsActivity::class.java)
+                    intent.putExtra("LEARNED_SPELLS", ArrayList(learnedSpells))
                     val options = ActivityOptions.makeCustomAnimation(
                         context,
                         R.anim.slide_in_right,
