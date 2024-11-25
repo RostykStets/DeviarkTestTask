@@ -14,9 +14,11 @@ import com.bumptech.glide.Glide
 import com.example.deviarktesttask.pl.activities.LearnedSpellsActivity
 import com.example.deviarktesttask.pl.activities.NewSpellsActivity
 import com.example.deviarktesttask.R
+import com.example.deviarktesttask.bll.local.implementations.CharacterService
 import com.example.deviarktesttask.bll.local.implementations.CharactersSpellsService
 import com.example.deviarktesttask.dal.Character
 import com.example.deviarktesttask.dal.local.MyApp
+import com.example.deviarktesttask.dal.local.repositories.CharacterRepository
 import com.example.deviarktesttask.dal.local.repositories.CharactersSpellsRepository
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -109,6 +111,9 @@ class CharacterDialog(context: Context, character: Character) {
 
         btnGoTeachSpell.setOnClickListener{
             GlobalScope.launch {
+
+                CharacterService(CharacterRepository(MyApp.database.characterDao())).upsertCharacter(character)
+
                 val unknownSpells =
                     CharactersSpellsService(CharactersSpellsRepository(MyApp.database.charactersSpellsDao())).getUnknownSpells(
                         character.id

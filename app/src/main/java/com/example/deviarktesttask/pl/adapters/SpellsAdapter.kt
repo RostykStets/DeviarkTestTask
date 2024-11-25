@@ -24,7 +24,7 @@ class SpellsAdapter(private val context: Context, private val spells: List<Spell
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val spell = spells[position]
         holder.spellName.text = spell.name
-        holder.spellName.setOnClickListener{
+        holder.itemView.setOnClickListener{
             onItemClick(spell)
         }
     }
